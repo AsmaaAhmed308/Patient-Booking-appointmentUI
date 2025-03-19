@@ -11,5 +11,7 @@ export interface appointments {
     gender: string;
     regDate: Date;
     docName: string;
+    specialty:string;
+    clinicName :string
 
 }
