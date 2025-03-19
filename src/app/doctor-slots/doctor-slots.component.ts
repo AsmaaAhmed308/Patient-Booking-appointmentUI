@@ -45,7 +45,8 @@ export class DoctorSlotsComponent implements OnInit {
 
   onDoctorChange(doctorId: number) {
     this.selectedDoctorId = doctorId;
-  }
+  } 
+  test(){console.log('test') }
 
   updateAvailableSlots(doctorId: number | null, date: Date) {
     if (!doctorId || !date) {
