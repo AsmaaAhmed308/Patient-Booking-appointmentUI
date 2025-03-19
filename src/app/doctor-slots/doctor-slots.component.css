@@ -1,0 +1,8 @@
+.selected-slot-class{
+   font-weight: bold;
+   color: #fff;
+   background-color: #198754;
+   cursor: pointer;
+   padding: 5px;
+   border-radius: 3px;
+}

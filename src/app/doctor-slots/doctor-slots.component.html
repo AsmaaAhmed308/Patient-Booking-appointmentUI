@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <form>
+        <div class="mb-3">
+            <label for="doctorSelect" class="form-label">Select Doctor</label>
+            <select class="form-select" id="doctorSelect" [(ngModel)]="selectedDoctorId" name="doctor"
+                (ngModelChange)="onDoctorChange($event)" required>
+                <option *ngFor="let doctor of doctors" [value]="doctor.doctorId">{{ doctor.name }}</option>
+            </select>
+        </div>
+        <div class="form-group mt-3">
+            <label for="date">Select Date</label>
+            <input type="date" [(ngModel)]="selectedDate" name="appointmentDate"
+                (ngModelChange)="updateAvailableSlots(selectedDoctorId, $event)" class="form-control" id="date" />
+        </div>
+
+
+        <div *ngIf="showDocSlots"> 
+            <h4 class="mt-4">Available Time Slots</h4>
+
+            <div class="alert alert-danger" role="alert" *ngIf="busySlot"
+                style="margin:  10px 10px 0 10px;">
+                the selected slot is busy , please select another time!
+            </div>
+
+            <table class="table" *ngIf="timeSlots.length> 0">
+                <thead>
+                    <tr>
+                        <th>Time Slot</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let slot of timeSlots" style="cursor: pointer;" (click)="setPatientAppointmetTime(slot)">
+                        <td> 
+                            <span [ngClass]="{ 'selected-slot-class': slot.selectedSlot }">{{ slot.slotTime }}</span>
+                        </td>
+                        <td [ngStyle]="{ 'color': slot.slotStatus == 'Available' ? 'green' : 'red'}">
+                            {{slot.slotStatus}}
+                         </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div  *ngIf="timeSlots.length == 0">
+                <p style="color: red; font-weight:  bold;">there is no available slots for this day </p>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+<div class="container mt-5">  
+    <h2 class="text-center">Appointments</h2>  
+    <table class="table table-bordered">  
+        <thead class="table-light">  
+            <tr>  
+                <th>Appointment ID</th>  
+                <th>Patient ID</th>  
+                <th>Doctor ID</th>  
+                <th>Appointment Date</th>  
+                <th>Start Time</th>  
+                <th>Duration</th>  
+                <th>Patient Name</th>  
+                <th>Birth Date</th>  
+                <th>Contact Info</th>  
+                <th>Gender</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let appointment of AppointmentArray">  
+                <td>{{ appointment.appointmentId }}</td>  
+                <td>{{ appointment.patientId }}</td>  
+                <td>{{ appointment.doctorId }}</td>  
+                <td>{{ appointment.appointmentDate | date: 'short'  }}</td>  
+                <td>{{ appointment.startTime }}</td>  
+                <td>{{ appointment.duration }}</td>  
+                <td>{{ appointment.patientName }}</td>  
+                <td>{{ appointment.birthDate | date: 'short'  }}</td>  
+                <td>{{ appointment.contactInfo }}</td>  
+                <td>{{ appointment.gender }}</td>  
+            </tr>  
+        </tbody>  
+    </table>  
+</div>  
