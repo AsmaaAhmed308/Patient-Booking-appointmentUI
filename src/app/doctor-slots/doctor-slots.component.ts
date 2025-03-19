@@ -63,9 +63,6 @@ export class DoctorSlotsComponent implements OnInit {
         if (res && res.length > 0) {
           this.timeSlots = [];
           console.log('res_ ', res)
-          // this.startTime = res[0].startTime
-          // this.endTime = res[0].endTime
-          // this.getMockTimeSlots()
           this.timeSlots = res
           this.showDocSlots = true
 
