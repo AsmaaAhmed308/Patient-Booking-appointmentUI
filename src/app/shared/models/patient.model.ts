@@ -1,7 +1,7 @@
-export interface patient{
+export interface Patient{
     patientId : number ;
     name : string;
     birthDate : Date;
-    contactInfo : number;
+    contactInfo : string;
     gender : string;
 }

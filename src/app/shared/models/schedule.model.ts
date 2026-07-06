@@ -1,4 +1,4 @@
-export interface schedule {  
+export interface Schedule {  
     scheduleId: number;  
     doctorId: string;  
     day: string;   

@@ -1,4 +1,4 @@
-export interface appointments {
+export interface Appointment {
     appointmentId: number;
     patientId: number;
     doctorId: number;
@@ -7,9 +7,9 @@ export interface appointments {
     duration: number;
     patientName: string;
     birthDate: Date;
-    contactInfo: number;
+    contactInfo: string;
     gender: string;
-    regDate: Date;
+    regDate?: Date;
     docName: string;
     specialty:string;
     clinicName :string
